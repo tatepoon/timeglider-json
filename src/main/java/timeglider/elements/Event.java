@@ -24,8 +24,8 @@ public class Event {
 	private String url;
 	private String icon;
 	private Integer importance;
-	public transient final static int DEFAULT_IMPORTANCE = 20; // So says TimeGlider
-															   // docs.
+	public transient static final int DEFAULT_IMPORTANCE = 20; // So says TimeGlider docs.
+	public transient static final String NOW = "now";
 
 	public static class EventBuilder {
 		private String id;
@@ -37,7 +37,7 @@ public class Event {
 		private String url;
 		private String icon;
 		private Integer importance = null;
-		public final String FORMAT = "yyyy-MM-DD'T'HH:mm:ssZ";
+		public final String FORMAT = "yyyy-MM-dd HH:mm:ss";
 
 		public EventBuilder(String id, String title, Date startdate) {
 			SimpleDateFormat sdf = new SimpleDateFormat(FORMAT);
@@ -72,6 +72,13 @@ public class Event {
 			SimpleDateFormat sdf = new SimpleDateFormat(FORMAT);
 			if (!enddate.equals(sdf.parse(startdate))) {
 				this.enddate = sdf.format(enddate);
+			}
+			return this;
+		}
+
+		public EventBuilder enddate(boolean now) {
+			if (now) {
+				this.enddate = NOW;
 			}
 			return this;
 		}

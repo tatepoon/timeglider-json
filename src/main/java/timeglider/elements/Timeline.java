@@ -20,7 +20,7 @@ public class Timeline {
 	private String title;
 	private String description;
 	private String focus_date;
-	private int initial_zoom;
+	private Integer initial_zoom;
 	private List<Event> events;
 	private List<Legend> legend;
 	
@@ -29,10 +29,10 @@ public class Timeline {
 		private String title;
 		private String description;
 		private String focus_date;
-		private int initial_zoom;
+		private Integer initial_zoom;
 		private List<Event> events;
 		private List<Legend> legend;
-		public final String FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ";
+		public final String FORMAT = "yyyy-MM-dd HH:mm:ss";
 		
 		public Builder(String id, String title, List<Event> events) {
 			this.id = id;
@@ -49,7 +49,7 @@ public class Timeline {
 			this.focus_date = sdf.format(focus);
 			return this;
 		}
-		public Builder initial_zoom(int zoom) {
+		public Builder initial_zoom(Integer zoom) {
 			this.initial_zoom = zoom;
 			return this;
 		}
