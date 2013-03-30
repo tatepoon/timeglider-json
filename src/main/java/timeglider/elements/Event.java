@@ -117,7 +117,7 @@ public class Event {
 			e.date_display = date_display;
 			e.url = url;
 			e.icon = icon;
-			e.importance = importance;
+			e.importance = (importance == null) ? DEFAULT_IMPORTANCE : importance;
 			return e;
 		}
 
