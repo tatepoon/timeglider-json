@@ -12,6 +12,6 @@ public enum DateDisplay {
 	YEAR, MONTH, DAY, HOUR, NONE;
 	
 	public String toString() {
-		return this.toString().toLowerCase();
+		return this.name().toLowerCase();
 	}
 }
