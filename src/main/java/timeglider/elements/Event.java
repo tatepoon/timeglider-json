@@ -78,7 +78,7 @@ public class Event {
 
 		public EventBuilder date_display(DateDisplay display) {
 			if (!display.equals(DateDisplay.DAY)) {
-				this.date_display = date_display.toString();
+				this.date_display = display.toString();
 			}
 			return this;
 		}
